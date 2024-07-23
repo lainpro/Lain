@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lain</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .post-form {
+            margin-bottom: 20px;
+        }
+        .post-form input,
+        .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .post-form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .post {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        .post-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="post-form"></div>
+    <div id="posts">
+      <div class="post">
+        <div class="post-title">
+          hey !
+        </div>
+        <div>
+          This little website is going to be the most important place for delivering my posts and showing my work in detail. I hope you enjoy it.
+        </div>
+      </div>
+    </div>
+  </div><img class="img-lol" src="C:&quot;C:/Users/amine/Downloads/lain/cute.png&quot;" alt="the cutest cover photo ever"> 
+  <script>
+
+
+        function addPost() {
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+
+            if (title && content) {
+                const postsContainer = document.getElementById('posts');
+
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+
+                const postTitleElement = document.createElement('div');
+                postTitleElement.className = 'post-title';
+                postTitleElement.textContent = title;
+
+                const postContentElement = document.createElement('div');
+                postContentElement.textContent = content;
+
+                postElement.appendChild(postTitleElement);
+                postElement.appendChild(postContentElement);
+
+                postsContainer.appendChild(postElement);
+
+                document.getElementById('postTitle').value = '';
+                document.getElementById('postContent').value = '';
+            } else {
+                alert('Please fill in both the title and content!');
+            }
+        }
+  </script>
+</body>
+</html>
